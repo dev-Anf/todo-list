@@ -2,13 +2,23 @@ const taskInput = document.querySelector('#taskInput');
 const addBtn = document.querySelector('#addBtn');
 const taskCont = document.querySelector('#taskContainer');
 
-addBtn.addEventListener('click', () =>
-    {
-        if(!taskInput.value){
+
+function addTask(task){
+    if(!task){
             return;
         }
-        createTask(taskInput.value);
-        taskInput.value = '';
+        createTask(task);
+        taskInput.value = ''
+}
+
+
+addBtn.addEventListener('click', ()=>{addTask(taskInput.value)
+})
+taskInput.addEventListener('keydown',(event)=>{
+    
+    if(event.key === 'Enter'){
+        addTask(taskInput.value)
+}
 })
 
 function createTask(taskText){
@@ -26,4 +36,8 @@ function createTask(taskText){
     taskDiv.appendChild(taskSpan);
     taskDiv.appendChild(delBtn);
     taskCont.append(taskDiv);
+
+    delBtn.addEventListener('click',()=>{
+        taskDiv.remove();
+    })
 }
