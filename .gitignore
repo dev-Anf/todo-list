@@ -1,0 +1,21 @@
+# Build results
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio / Rider / VS Code
+.vs/
+.vscode/
+*.user
+*.suo
+
+# NuGet
+*.nupkg
+**/packages/*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Local settings that may contain secrets
+appsettings.*.local.json
+*.http
